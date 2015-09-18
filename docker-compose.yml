@@ -1,5 +1,3 @@
 swarm-client:
     build: .
-    command: -labels "java9 docker" -mode exclusive -master http://jenkins:8080
-	links:
-	    - jenkins
+    command: -labels "java9 docker" -mode exclusive -master -executors 4 http://jenkins:8080
