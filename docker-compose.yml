@@ -1,0 +1,3 @@
+swarm-client:
+	build: .
+	command: -labels "java9 docker" -mode exclusive -master http://master:8080
