@@ -15,7 +15,7 @@ RUN add-apt-repository -y ppa:webupd8team/java && \
     apt-get install -y oracle-java9-set-default; \
     rm -rf /var/cache/oracle-jdk9-installer
 
-RUN curl -L https://github.com/docker/compose/releases/download/VERSION_NUM/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && \
+RUN curl -L https://github.com/docker/compose/releases/download/1.4.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && \
 	chmod +x /usr/local/bin/docker-compose
 	
 ADD http://maven.jenkins-ci.org/content/repositories/releases/org/jenkins-ci/plugins/swarm-client/2.0/swarm-client-2.0-jar-with-dependencies.jar swarm-client.jar
