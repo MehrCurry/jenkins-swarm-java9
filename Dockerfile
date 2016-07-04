@@ -1,4 +1,4 @@
-FROM ubuntu:15.10
+FROM ubuntu:16.04
 
 RUN apt-get update -qq && apt-get install -qqy curl apt-transport-https software-properties-common python-software-properties iptables ca-certificates lxc git-core zip graphviz python
 RUN curl -sSL https://get.docker.com/ | sh
