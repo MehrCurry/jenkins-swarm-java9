@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-RUN apt-get update -qq && apt-get install -qqy curl apt-transport-https software-properties-common python-software-properties iptables ca-certificates lxc git-core zip graphviz python
+RUN apt-get update -qq && apt-get install -qqy curl apt-transport-https software-properties-common python-software-properties iptables ca-certificates git-core zip graphviz python
 
 RUN echo oracle-java9-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
     add-apt-repository -y ppa:webupd8team/java && \
@@ -13,5 +13,5 @@ RUN echo oracle-java9-installer shared/accepted-oracle-license-v1-1 select true 
 
 ENV JAVA_HOME /usr/lib/jvm/java-9-oracle
 
-ADD http://maven.jenkins-ci.org/content/repositories/releases/org/jenkins-ci/plugins/swarm-client/2.0/swarm-client-2.0-jar-with-dependencies.jar swarm-client.jar
+ADD http://maven.jenkins-ci.org/content/repositories/releases/org/jenkins-ci/plugins/swarm-client/2.1/swarm-client-2.1-jar-with-dependencies.jar swarm-client.jar
 ENTRYPOINT [ "java",  "-jar",  "swarm-client.jar" ]
